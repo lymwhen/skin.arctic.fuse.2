@@ -595,6 +595,7 @@
         <param name="itemlayout_h">view_poster_itemlayout_h</param>
         <param name="control">fixedlist</param>
         <param name="orientation">horizontal</param>
+        <param name="offset_y">120</param>
         <definition>
             <include content="List_Core">
                 <param name="orientation">$PARAM[orientation]</param>

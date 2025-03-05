@@ -76,6 +76,7 @@
 
     <include name="View_Row_Info">
         <control type="group">
+        <id>13002</id>
             <visible>!Integer.IsEqual(Container.NumItems,0)</visible>
 
             <control type="group">
@@ -158,10 +159,32 @@
             <control type="group">
                 <visible>!$EXP[Exp_View_HasHeader]</visible>
                 <visible>!$EXP[Exp_View_HasIndent]</visible>
-                <control type="group">
-                    <visible>![Control.IsVisible(553) | Control.IsVisible(554) | Control.IsVisible(557) | Control.IsVisible(558)]</visible>
-                    <include>Info_Viewline</include>
-                </control>
+  <control type="button" id="13001">
+        <description>My First label</description>
+        <left>80</left>
+        <top>520</top>
+        <width>700</width>
+        <height>80</height>
+        <visible>true</visible>
+        <align>center</align>
+        <aligny>center</aligny>
+        <scroll>false</scroll>
+        <!-- <label>$INFO[String.EndsWith(Container.FolderPath,TvShowTitles)]</label> -->
+        <!-- <label>$EXP[String.Split(Container.FolderPath, /).List.Length]</label> -->
+        <label>$INFO[Container.FolderPath]</label>
+        <haspath>false</haspath>
+        <font>font14</font>
+        <textcolor>FFFFFFFF</textcolor>
+        <wrapmultiline>false</wrapmultiline>
+        <scrollspeed>50</scrollspeed>
+        <scrollsuffix> - </scrollsuffix>
+        <ondown>50</ondown>
+        <visible>!Container.Content(tvshows)</visible>
+        <!-- <visible>String.Split(Container.FolderPath, /).List.Length gt 1</visible> -->
+  <!-- <onclick>ActivateWindow(weather)</onclick> -->
+  <!-- <onclick>PlayMedia(F:\电视剧\人民的名义 (2017)\Season 1\人民的名义 - S01E01 - 侯亮平搜查贪污 反贪局合作行动.mp4)</onclick> -->
+  <onclick>PlayMedia($INFO[Container.FolderPath],isdir,resume)</onclick>
+                        </control>
                 <control type="group">
                     <visible>[Control.IsVisible(553) | Control.IsVisible(554) | Control.IsVisible(557) | Control.IsVisible(558)]</visible>
                     <include content="Info_Viewline">
